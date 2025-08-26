@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Abdul Ahad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:#0d0d0d;color:#eaeaea;line-height:1.6}
+
+    header{height:100vh;display:flex;flex-direction:column;justify-content:space-between;align-items:center;
+      background:linear-gradient(to bottom,rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url('data/BG-Mini.jpg') no-repeat center/cover;
+      animation: fadeInBg 2s ease-in}
+    nav{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 5%;animation:slideDown 1.2s ease}
+    .logo{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:1px}
+    .nav-links{list-style:none;display:flex;gap:2rem}
+    .nav-links a{color:#bbb;text-decoration:none;transition:.3s;font-weight:600;position:relative}
+    .nav-links a::after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:2px;background:#00f2fe;transition:.3s}
+    .nav-links a:hover{color:#00f2fe}
+    .nav-links a:hover::after{width:100%}
+
+    .hero{text-align:center;margin-bottom:3rem;animation:fadeUp 1.8s ease}
+    .hero img{width:160px;height:160px;border-radius:50%;border:4px solid #00f2fe;object-fit:cover;margin-bottom:1rem;animation:zoomIn 1.5s}
+    .hero h2{font-size:2.8rem;font-weight:700}
+    .hero h2 span{background:linear-gradient(45deg,#4facfe,#00f2fe);-webkit-background-clip:text;color:transparent}
+    .hero p{font-size:1.2rem;margin:1rem 0 2rem;color:#ccc}
+    .btn{display:inline-block;padding:.8rem 1.8rem;border-radius:30px;border:2px solid #00f2fe;color:#00f2fe;text-decoration:none;transition:.3s}
+    .btn:hover{background:linear-gradient(45deg,#4facfe,#00f2fe);color:#fff;transform:scale(1.05)}
+
+    section{padding:5rem 10%;text-align:center}
+    section h2{font-size:2rem;margin-bottom:2rem;display:inline-block;position:relative}
+    section h2::after{content:"";width:50px;height:3px;background:#00f2fe;display:block;margin:.5rem auto}
+
+    #about p{max-width:600px;margin:auto;color:#aaa}
+
+    .skills{max-width:700px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;text-align:left;margin-top:2rem}
+    .skill-name{margin-bottom:.3rem;font-weight:600;font-size:.95rem}
+    .skill-bar{background:#222;border-radius:8px;overflow:hidden;height:10px}
+    .skill-fill{height:100%;width:0;background:linear-gradient(90deg,#4facfe,#00f2fe);border-radius:8px;transition:width 2s ease}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem}
+    .project-card{background:#1a1a1a;padding:2rem;border-radius:15px;transition:.3s;opacity:0;transform:translateY(40px)}
+    .project-card.show{opacity:1;transform:translateY(0);transition:all 1s ease}
+    .project-card:hover{transform:translateY(-10px) scale(1.02);background:#222}
+    .project-card h3{margin-bottom:1rem}
+    .project-links{margin-top:1rem;display:flex;justify-content:center;gap:1rem;font-size:1.2rem}
+    .project-links a{color:#00f2fe;text-decoration:none;transition:.3s;transform:scale(0.9)}
+    .project-links a:hover{color:#fff;transform:scale(1.2) rotate(8deg)}
+
+    .contact-links{display:flex;justify-content:center;gap:2rem;margin-top:2rem;font-size:1.5rem;opacity:0;transform:translateY(40px);transition:all 1s ease}
+    .contact-links.show{opacity:1;transform:translateY(0)}
+    .contact-links a{color:#00f2fe;transition:.3s;transform:scale(0.9)}
+    .contact-links a:hover{color:#fff;transform:scale(1.3) rotate(5deg)}
+
+    footer{text-align:center;padding:1rem;background:#111;color:#777;font-size:.9rem;animation:fadeIn 2s ease}
+
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes zoomIn{from{opacity:0;transform:scale(0.6)}to{opacity:1;transform:scale(1)}}
+    @keyframes fadeInBg{from{opacity:0}to{opacity:1}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">Abdul Ahad Tayyab</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+     <img src="data/profile pic.png" alt="Profile Picture" 
+     style="object-fit:cover; object-position:top;">
+
+      <h2>Hi, I'm <span>Abdul Ahad</span></h2>
+      <p>Software Engineer</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Software Engineer with hands on experience in Web development, Android development, and Game development. I've always been eager to explore tech related stuff, get my hands into AI and explore what this exciting field has to offer. I love to learn new technologies and implement them into my projects. I'm a quick learner. I'm always open to new opportunities and challenges.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <div class="skill-name">Web development - .NET</div>
+        <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Android development - Kotlin</div>
+        <div class="skill-bar"><div class="skill-fill" data-percent="80%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Game development - Unity 3D</div>
+        <div class="skill-bar"><div class="skill-fill" data-percent="85%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">AI/ML - python</div>
+        <div class="skill-bar"><div class="skill-fill" data-percent="75%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Muslim Productivity Website</h3>
+        <p>HTML, CSS, JavaScript, Bootstrap, C#, ASP.NET, MVC</p>
+        <div class="project-links">
+          <a href="#"><i class="fa-solid fa-play"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Post Sharing App</h3>
+        <p>Android, Firebase, Kotlin, Retrofit, Jetpack, SDKs</p>
+        <div class="project-links">
+          <a href="#"><i class="fa-solid fa-play"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>E-Commerce Website</h3>
+        <p>React.js, .NET Web APIs, Restful APIs, SQL Server, EFC, Clean Architecture</p>
+        <div class="project-links">
+          <a href="#"><i class="fa-solid fa-play"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>FPS Game 3D</h3>
+        <p style="color: rgb(177, 9, 93);">(Client's Project)</p>
+        <p>Unity 3D, C#, FPS-Controller, Standard Assets, Motion & Animation, NPC's Attack</p>
+        <div class="project-links">
+          <a href="#"><i class="fa-solid fa-play"></i></a>
+           
+        </div>
+      </div>
+          <div class="project-card">
+        <h3>Celebrity Look-a-like</h3>
+        <p>Python, Flask API, JavaScript, Python Libraries</p>
+        <div class="project-links">
+          <a href="#"><i class="fa-solid fa-play"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+      </div>
+      <div class="project-card">
+        <h3>The Alien Saga Game 3D</h3>
+        <p style="color: rgb(177, 9, 93);">(Client's Project)</p>
+        <p>Unity 3D, C#, Simulation, Game-Modes, Advanced Math</p>
+        <div class="project-links">
+          <a href="#"><i class="fa-solid fa-play"></i></a>
+           
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulahad.dev.26@gmail.com" target="_blank">
+  <i class="fa-solid fa-envelope"></i>
+</a>
+      <a href="https://github.com/Abdul-Ahad-hub" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/abdulahadtayyab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://m.facebook.com/people/Abdulahad-Tayyab/100078416524455/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://leetcode.com/u/AbdulAhad20" target="_blank"><i class="fa-solid fa-code"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 abdulahad.dev.26@gmail.com</p>
+  </footer>
+
+  <script>
+    const skillFills = document.querySelectorAll('.skill-fill');
+    skillFills.forEach(fill => fill.style.width = "0");
+    const projects = document.querySelectorAll('.project-card');
+    const contact = document.querySelector('.contact-links');
+
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          if(entry.target.classList.contains('skill-fill')){
+            entry.target.style.width = entry.target.getAttribute('data-percent');
+          }
+          if(entry.target.classList.contains('project-card')){
+            entry.target.classList.add('show');
+          }
+          if(entry.target.classList.contains('contact-links')){
+            entry.target.classList.add('show');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.6});
+
+    skillFills.forEach(fill=>observer.observe(fill));
+    projects.forEach(card=>observer.observe(card));
+    observer.observe(contact);
+  </script>
+</body>
+</html>
