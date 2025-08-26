@@ -14,13 +14,14 @@
     header{height:100vh;display:flex;flex-direction:column;justify-content:space-between;align-items:center;
       background:linear-gradient(to bottom,rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url('data/BG-Mini.jpg') no-repeat center/cover;
       animation: fadeInBg 2s ease-in}
-    nav{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 5%;animation:slideDown 1.2s ease}
+    nav{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 5%;animation:slideDown 1.2s ease;position:relative}
     .logo{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:1px}
     .nav-links{list-style:none;display:flex;gap:2rem}
     .nav-links a{color:#bbb;text-decoration:none;transition:.3s;font-weight:600;position:relative}
     .nav-links a::after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:2px;background:#00f2fe;transition:.3s}
     .nav-links a:hover{color:#00f2fe}
     .nav-links a:hover::after{width:100%}
+    .menu-toggle{display:none;font-size:1.8rem;color:#00f2fe;cursor:pointer}
 
     .hero{text-align:center;margin-bottom:3rem;animation:fadeUp 1.8s ease}
     .hero img{width:160px;height:160px;border-radius:50%;border:4px solid #00f2fe;object-fit:cover;margin-bottom:1rem;animation:zoomIn 1.5s}
@@ -62,15 +63,28 @@
     @keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
     @keyframes zoomIn{from{opacity:0;transform:scale(0.6)}to{opacity:1;transform:scale(1)}}
     @keyframes fadeInBg{from{opacity:0}to{opacity:1}}
+
+    @media(max-width:768px){
+      .nav-links{position:absolute;top:70px;right:-100%;flex-direction:column;background:#111;width:70%;padding:2rem;border-radius:12px;gap:1.5rem;transition:right .4s ease}
+      .nav-links.active{right:5%}
+      .menu-toggle{display:block}
+    }
   </style>
 </head>
 <body>
   <header>
-
+    <nav>
+      <h1 class="logo">Abdul Ahad Tayyab</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+    </nav>
     <div class="hero">
-     <img src="data/profile pic.png" alt="Profile Picture" 
-     style="object-fit:cover; object-position:top;">
-
+     <img src="data/profile pic.png" alt="Profile Picture" style="object-fit:cover; object-position:top;">
       <h2>Hi, I'm <span>Abdul Ahad</span></h2>
       <p>Software Engineer</p>
       <a href="#projects" class="btn">View My Work</a>
@@ -114,7 +128,7 @@
         <p>HTML, CSS, JavaScript, Bootstrap, C#, ASP.NET, MVC</p>
         <div class="project-links">
           <a href="#"><i class="fa-solid fa-play"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/Abdul-Ahad-hub/Muslim-Productivity-Website"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
       <div class="project-card">
@@ -122,7 +136,7 @@
         <p>Android, Firebase, Kotlin, Retrofit, Jetpack, SDKs</p>
         <div class="project-links">
           <a href="#"><i class="fa-solid fa-play"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/Abdul-Ahad-hub/Post-Sharing-App"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
       <div class="project-card">
@@ -130,7 +144,7 @@
         <p>React.js, .NET Web APIs, Restful APIs, SQL Server, EFC, Clean Architecture</p>
         <div class="project-links">
           <a href="#"><i class="fa-solid fa-play"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/Abdul-Ahad-hub/E-Commerce-Project"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
@@ -140,17 +154,15 @@
         <p>Unity 3D, C#, FPS-Controller, Standard Assets, Motion & Animation, NPC's Attack</p>
         <div class="project-links">
           <a href="#"><i class="fa-solid fa-play"></i></a>
-           
         </div>
       </div>
-          <div class="project-card">
+      <div class="project-card">
         <h3>Celebrity Look-a-like</h3>
         <p>Python, Flask API, JavaScript, Python Libraries</p>
         <div class="project-links">
           <a href="#"><i class="fa-solid fa-play"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/Abdul-Ahad-hub/Celebrity-Look-a-Like-Finder"><i class="fa-brands fa-github"></i></a>
         </div>
-
       </div>
       <div class="project-card">
         <h3>The Alien Saga Game 3D</h3>
@@ -158,21 +170,15 @@
         <p>Unity 3D, C#, Simulation, Game-Modes, Advanced Math</p>
         <div class="project-links">
           <a href="#"><i class="fa-solid fa-play"></i></a>
-           
         </div>
       </div>
     </div>
-    </div>
-
-
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact-links">
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulahad.dev.26@gmail.com" target="_blank">
-  <i class="fa-solid fa-envelope"></i>
-</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulahad.dev.26@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://github.com/Abdul-Ahad-hub" target="_blank"><i class="fa-brands fa-github"></i></a>
       <a href="https://www.linkedin.com/in/abdulahadtayyab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
       <a href="https://m.facebook.com/people/Abdulahad-Tayyab/100078416524455/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
@@ -210,6 +216,13 @@
     skillFills.forEach(fill=>observer.observe(fill));
     projects.forEach(card=>observer.observe(card));
     observer.observe(contact);
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click',()=>{navLinks.classList.toggle('active')});
+    document.querySelectorAll('.nav-links a').forEach(link=>{
+      link.addEventListener('click',()=>navLinks.classList.remove('active'));
+    });
   </script>
 </body>
 </html>
