@@ -522,6 +522,7 @@
     .lang-badge:nth-child(3) { animation-delay: 0.15s; }
     .lang-badge:nth-child(4) { animation-delay: 0.2s; }
     .lang-badge:nth-child(5) { animation-delay: 0.25s; }
+    .lang-badge:nth-child(6) { animation-delay: 0.3s; }
 
     @keyframes scaleIn {
       to {
@@ -1045,6 +1046,11 @@
       .menu-toggle {
         display: block;
       }
+      header {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.85) 45%, #000000 80%),
+                    url('data/BG.jpg') no-repeat center 20%/cover;
+        background-attachment: scroll;
+      }
       .hero h2 {
         font-size: 2rem;
       }
@@ -1057,6 +1063,13 @@
       .more-btn {
         padding: 0.7rem 1.6rem;
         font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.88) 45%, #000000 80%),
+                    url('data/BG.jpg') no-repeat center 15%/cover;
       }
     }
   </style>
@@ -1114,6 +1127,8 @@
       <div class="skill-items">
         <div class="skill-item"><i class="fa-brands fa-microsoft"></i> ASP.NET Core</div>
         <div class="skill-item"><i class="fa-brands fa-react"></i> React.js</div>
+        <div class="skill-item"><i class="fa-brands fa-angular"></i> Angular</div>
+        <div class="skill-item"><i class="fa-solid fa-leaf"></i> Spring Boot</div>
         <div class="skill-item"><i class="fa-brands fa-node-js"></i> Node.js / Express</div>
         <div class="skill-item"><i class="fa-brands fa-android"></i> Android SDK</div>
         <div class="skill-item"><i class="fa-solid fa-gamepad"></i> Unity 3D</div>
@@ -1146,6 +1161,7 @@
   <div class="lang-list">
     <div class="lang-badge"><i class="fa-solid fa-hashtag"></i> C#</div>
     <div class="lang-badge"><i class="fa-solid fa-plus"></i> C++</div>
+    <div class="lang-badge"><i class="fa-brands fa-java"></i> Java</div>
     <div class="lang-badge"><i class="fa-brands fa-python"></i> Python</div>
     <div class="lang-badge"><i class="fa-brands fa-js"></i> JavaScript / TypeScript</div>
     <div class="lang-badge"><i class="fa-brands fa-android"></i> Kotlin</div>
@@ -1194,20 +1210,19 @@
     <div class="achievement-card">
       <div class="achievement-icon"><i class="fa-solid fa-crown"></i></div>
       <div class="achievement-title">Top 20 Position Holder</div>
-      <div class="achievement-desc">Ranked among the top 20 students in Lahore Board Intermediate Examinations (ICS) out of over 85,000 candidates. Recognized by ICAP for outstanding academic achievement.</div>
-      <div class="achievement-stats"> Among Top 0.02% | 85,000+ Candidates | ICS</div>
-    </div>
-    <div class="achievement-card">
-      <div class="achievement-icon"><i class="fa-solid fa-medal"></i></div>
-      <div class="achievement-title">100% Merit Scholarship</div>
-      <div class="achievement-desc">Secured full tuition scholarship at Punjab College for exceptional academic performance during Intermediate studies.</div>
-      <div class="achievement-stats"> Full Tuition Coverage | Punjab College</div>
+      <div class="achievement-desc">Ranked among the top 20 students in the Lahore Board Intermediate Examinations (ICS), recognized by ICAP for outstanding academic achievement.</div>
     </div>
     <div class="achievement-card">
       <div class="achievement-icon"><i class="fa-solid fa-graduation-cap"></i></div>
       <div class="achievement-title">PEEF Scholarship Recipient</div>
       <div class="achievement-desc">Selected for prestigious Punjab Educational Endowment Fund scholarship for undergraduate studies based on outstanding academic record.</div>
       <div class="achievement-stats">PEEF Merit Scholarship | Undergraduate</div>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon"><i class="fa-solid fa-ranking-star"></i></div>
+      <div class="achievement-title">National Skills Test Top Percentile</div>
+      <div class="achievement-desc">Ranked in the 99.7th percentile among 30,000+ participants in the National Skills Test Competition organized by HEC.</div>
+      <div class="achievement-stats">99.7th Percentile | HEC National Skills Test</div>
     </div>
   </div>
 </section>
